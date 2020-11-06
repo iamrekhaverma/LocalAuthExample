@@ -18,7 +18,7 @@ const App = () => {
       [{text: 'OK', onPress: () => console.log('OK Pressed')}],
       {cancelable: false},
     );
-    const result = LocalAuthentication.hasHardwareAsync();
+    const result = await LocalAuthentication.hasHardwareAsync();
     console.warn('warning', result);
   };
   return (
