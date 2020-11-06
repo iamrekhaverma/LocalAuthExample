@@ -12,13 +12,14 @@ import * as LocalAuthentication from 'expo-local-authentication';
 
 const App = () => {
   const getAuthSupport = async () => {
-    // const result = LocalAuthentication.hasHardwareAsync();
     Alert.alert(
       JSON.stringify(LocalAuthentication),
       'My Alert Msg',
       [{text: 'OK', onPress: () => console.log('OK Pressed')}],
       {cancelable: false},
     );
+    const result = LocalAuthentication.hasHardwareAsync();
+    console.warn('warning', result);
   };
   return (
     <>
