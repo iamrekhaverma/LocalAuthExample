@@ -12,13 +12,8 @@ import * as LocalAuthentication from 'expo-local-authentication';
 
 const App = () => {
   const getAuthSupport = async () => {
-    Alert.alert(
-      JSON.stringify(LocalAuthentication),
-      'My Alert Msg',
-      [{text: 'OK', onPress: () => console.log('OK Pressed')}],
-      {cancelable: false},
-    );
-    const result = await LocalAuthentication.hasHardwareAsync();
+
+    const result = await LocalAuthentication.authenticateAsync();
     console.warn('warning', result);
   };
   return (
